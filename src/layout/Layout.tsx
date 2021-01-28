@@ -1,12 +1,14 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
-import { PageProps } from "gatsby";
+import Footer from "../footer/Footer";
+import "../scss/styles.scss";
 
-export default function Layout(props: PageProps) {
+export default function Layout({ children }) {
   return (
     <div>
       <Navbar />
-      {props.children}
+      {children}
+      <Footer />
     </div>
   );
 }
