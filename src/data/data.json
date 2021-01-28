@@ -1,9 +1,9 @@
 {
   "links": [
-    { "name": "github", "url": "https://github.com/BajKull" },
-    { "name": "author", "url": "https://dbanachowski.netlify.app/" },
+    { "name": "GitHub", "url": "https://github.com/BajKull" },
+    { "name": "Author", "url": "https://dbanachowski.netlify.app/" },
     {
-      "name": "linkedin",
+      "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/dawid-banachowski-24639a1b3/"
     }
   ],

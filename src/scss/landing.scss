@@ -4,19 +4,28 @@
 .landing {
   color: $fontColor;
 
+  .card {
+    box-shadow: 28px 28px 50px -20px rgba(#0d2750, 0.16),
+      -23px -23px 45px -25px rgba(#ffffff, 1);
+    padding: 50px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+  }
+
   .mainLanding {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 0 50px;
+    margin-bottom: 100px;
 
     .mainIllustration {
       width: clamp(500px, 50%, 760px);
     }
 
     .landingHeader {
-      width: 500px;
+      width: 466px;
       margin-right: 50px;
 
       button {
@@ -33,6 +42,41 @@
       font-size: 1em;
       font-weight: 600;
       color: lighten($fontColor, 30);
+    }
+  }
+
+  .adventure {
+    width: 80%;
+    margin: auto;
+    background-color: rgb(240, 240, 240);
+    padding: 25px 10% 100px 10%;
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        margin: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 325px;
+
+        .adventureImg {
+          margin: 25px 0;
+          width: 250px;
+          height: 250px;
+        }
+      }
+    }
+
+    .adventureTitle {
+      text-align: center;
+      font-size: 2.75em;
+      font-weight: 600;
+      margin: 50px 0;
     }
   }
 }
