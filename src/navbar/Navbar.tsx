@@ -9,9 +9,7 @@ export default function Navbar() {
       <div className="content">
         <ul>
           <Link to="/">
-            <li>
-              <Logo />
-            </li>
+            <Logo className="logo" />
           </Link>
           <Link to="/pieces">
             <li>Pieces</li>

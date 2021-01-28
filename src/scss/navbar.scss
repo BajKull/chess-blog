@@ -13,16 +13,30 @@
 
     ul {
       display: flex;
+      align-items: center;
 
       a {
         text-decoration: none;
         color: white;
+        display: contents;
+
+        &:hover {
+          color: $darkPurple;
+        }
+      }
+
+      .logo {
+        height: 64px;
+        width: 64px;
+        margin-right: 50px;
       }
 
       li {
         list-style-type: none;
         font-weight: 700;
+        font-size: 1.25em;
         margin-right: 50px;
+        height: 32px;
       }
     }
   }

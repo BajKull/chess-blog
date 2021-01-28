@@ -1,5 +1,10 @@
 import React from "react";
+import Layout from "../layout/Layout";
 
 export default function pieces() {
-  return <div></div>;
+  return (
+    <Layout>
+      <div></div>
+    </Layout>
+  );
 }

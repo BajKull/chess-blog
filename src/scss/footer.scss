@@ -1,0 +1,57 @@
+@import "colors";
+
+.footer {
+  // height: 200px;
+  position: relative;
+  width: 100%;
+  background-color: $darkPurple;
+  overflow: hidden;
+
+  .background {
+    position: absolute;
+    right: -275px;
+    top: -175px;
+    height: 600px;
+    opacity: 0.1;
+  }
+
+  .content {
+    width: 80%;
+    margin: auto;
+    color: white;
+    padding: 50px 0;
+
+    .col {
+      .footerTitle {
+        margin-bottom: 15px;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      a {
+        // display: contents;
+        text-decoration: none;
+        color: white;
+        margin: 5px 0;
+        transition: 0.2s;
+
+        &:hover {
+          color: lighten($darkPurple, 40);
+        }
+      }
+
+      .mail {
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    }
+
+    .copyright {
+      text-align: end;
+      color: lighten($darkPurple, 25);
+    }
+  }
+}
