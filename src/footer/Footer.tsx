@@ -5,7 +5,7 @@ import "../scss/footer.scss";
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query FooterQuery {
       allDataJson {
         edges {
           node {

@@ -1,9 +1,10 @@
 import React from "react";
 import Layout from "../layout/Layout";
 import chessboard from "../data/images/chessboard.png";
-import "../scss/landing.scss";
 import Pawn from "../data/svg/pawn.svg";
 import Queen from "../data/svg/queen.svg";
+import PuzzleOfDay from "../components/PuzzleOfDay";
+import "../scss/landing.scss";
 
 export default function index() {
   return (
@@ -37,6 +38,7 @@ export default function index() {
               </div>
             </div>
           </div>
+          <PuzzleOfDay />
         </div>
       </div>
     </Layout>

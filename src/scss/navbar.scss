@@ -19,9 +19,10 @@
         text-decoration: none;
         color: white;
         display: contents;
+        transition: 0.2s;
 
         &:hover {
-          color: $darkPurple;
+          color: rgb(220, 220, 220);
         }
       }
 

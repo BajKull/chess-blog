@@ -1,4 +1,5 @@
 @import "colors";
+@import "mixins";
 @import "buttons";
 
 .landing {
@@ -10,6 +11,9 @@
     padding: 50px;
     background-color: rgb(250, 250, 250);
     border-radius: 10px;
+    @include breakpoint(700px) {
+      padding: 25px;
+    }
   }
 
   .mainLanding {
@@ -21,12 +25,21 @@
     margin-bottom: 100px;
 
     .mainIllustration {
-      width: clamp(500px, 50%, 760px);
+      width: clamp(250px, 50%, 760px);
     }
 
     .landingHeader {
       width: 466px;
       margin-right: 50px;
+      margin-top: 50px;
+
+      @include breakpoint(1350px) {
+        margin-right: 0;
+      }
+      @include breakpoint(700px) {
+        width: 100%;
+        text-align: center;
+      }
 
       button {
         margin-top: 25px;
@@ -35,12 +48,12 @@
 
     .landingTitle {
       margin-bottom: 15px;
-      font-size: 2.75em;
+      font-size: clamp(1.5em, 5vw, 2.75em);
       font-weight: 600;
     }
     .landingSubtitle {
-      font-size: 1em;
-      font-weight: 600;
+      font-size: clamp(0.75em, 2vw, 1em);
+      font-weight: 500;
       color: lighten($fontColor, 30);
     }
   }
@@ -63,6 +76,10 @@
         justify-content: center;
         align-items: center;
         width: 325px;
+
+        h2 {
+          font-weight: 500;
+        }
 
         .adventureImg {
           margin: 25px 0;
