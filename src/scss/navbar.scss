@@ -10,6 +10,7 @@
   position: fixed;
   background-color: white;
   transition: 0.2s;
+  z-index: 100;
 
   @include breakpoint(600px) {
     height: auto;

@@ -1,0 +1,60 @@
+@import "mixins";
+
+.openings {
+  margin: 25px auto 100px auto;
+
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .openingsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+  }
+
+  .card {
+    margin: 50px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+
+    .mediumTitle {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+      max-width: 300px;
+      transition: 0.2s;
+    }
+
+    .openingImgContainer {
+      margin-top: auto;
+      width: clamp(200px, 20vw, 300px);
+      transition: 0.2s;
+    }
+
+    .openingImg {
+      width: 100%;
+    }
+
+    &:hover {
+      .mediumTitle {
+        transform: translateY(-25px);
+        @include breakpoint(600px) {
+          transform: translateY(-15px);
+        }
+      }
+
+      .openingImgContainer {
+        transform: scale(1.25);
+        @include breakpoint(600px) {
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+}

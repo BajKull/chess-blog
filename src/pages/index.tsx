@@ -21,7 +21,9 @@ export default function index() {
               </h2>
               <button className="mainButton">Read more</button>
             </header>
-            <img src={chessboard} alt="" className="mainIllustration" />
+            <div className="illustrationContainer">
+              <img src={chessboard} alt="" className="mainIllustration" />
+            </div>
           </div>
           <div className="adventure">
             <h1 className="adventureTitle title">

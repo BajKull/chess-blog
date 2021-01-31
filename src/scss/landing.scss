@@ -16,8 +16,11 @@
       padding: 0 15px;
     }
 
-    .mainIllustration {
+    .illustrationContainer {
       width: clamp(250px, 50%, 760px);
+    }
+    .mainIllustration {
+      width: 100%;
     }
 
     .landingHeader {
