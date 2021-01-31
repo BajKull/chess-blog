@@ -9,6 +9,7 @@
   align-items: center;
   position: fixed;
   background-color: white;
+  transition: 0.2s;
 
   @include breakpoint(600px) {
     height: auto;
@@ -69,13 +70,15 @@
     .hidden {
       display: flex;
       @include breakpoint(600px) {
-        display: none;
+        transform: translateY(-150%);
+        opacity: 0;
       }
     }
 
     ul {
       display: flex;
       align-items: center;
+      transition: 0.5s;
 
       @include breakpoint(600px) {
         flex-direction: column;
@@ -119,7 +122,7 @@
 }
 
 .navbarMini {
-  height: auto;
+  height: 52px;
   box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.25);
   .content {
     ul {

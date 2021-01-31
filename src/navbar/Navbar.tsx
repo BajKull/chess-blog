@@ -15,8 +15,6 @@ export default function Navbar() {
       const newPos = window.scrollY;
       const width = window.innerWidth;
 
-      console.log(newPos, scrollPos);
-
       if (newPos >= scrollPos && width < 800) {
         setHide(true);
         setScaledDown(true);

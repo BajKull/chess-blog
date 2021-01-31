@@ -13,10 +13,10 @@ export default function index() {
         <div className="content">
           <div className="mainLanding">
             <header className="landingHeader card">
-              <h1 className="landingTitle">
+              <h1 className="landingTitle title">
                 Chess is the struggle against the error.
               </h1>
-              <h2 className="landingSubtitle">
+              <h2 className="landingSubtitle subtitle">
                 When you see a good move, look for a better one.
               </h2>
               <button className="mainButton">Read more</button>
@@ -24,7 +24,9 @@ export default function index() {
             <img src={chessboard} alt="" className="mainIllustration" />
           </div>
           <div className="adventure">
-            <h1 className="adventureTitle">Start you chess adventure now!</h1>
+            <h1 className="adventureTitle title">
+              Start you chess adventure now!
+            </h1>
             <div className="cards">
               <div className="card">
                 <h2>I'm a complete begginer</h2>

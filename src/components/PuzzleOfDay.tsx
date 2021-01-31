@@ -23,8 +23,8 @@ export default function PuzzleOfDay() {
   return (
     <div className="puzzle">
       <div className="content">
-        <h1 className="puzzleTitle">Puzzle of the day</h1>
-        <h2 className="puzzleSubtitle">
+        <h1 className="puzzleTitle title">Puzzle of the day</h1>
+        <h2 className="puzzleSubtitle subtitle">
           Treat your brain with a little exercise!
         </h2>
         <div className="container">

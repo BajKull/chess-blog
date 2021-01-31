@@ -6,13 +6,11 @@
     margin: 50px auto 100px auto;
 
     .puzzleTitle {
-      font-size: 2.75em;
       text-align: center;
       font-weight: 600;
     }
 
     .puzzleSubtitle {
-      font-size: 1.25em;
       text-align: center;
       font-weight: 500;
       margin-bottom: 75px;
@@ -45,9 +43,9 @@
         .tip {
           color: rgb(220, 220, 220);
           font-weight: 400;
-          font-size: 0.85em;
+          font-size: clamp(0.5em, 2vw, 0.85em);
           text-align: end;
-          margin-top: auto;
+          margin-top: 25px;
         }
 
         .move {
