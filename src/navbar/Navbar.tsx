@@ -15,23 +15,26 @@ export default function Navbar() {
       const newPos = window.scrollY;
       const width = window.innerWidth;
 
-      if (newPos >= scrollPos && width < 800) {
+      if (newPos > scrollPos && width < 800) {
         setHide(true);
         setScaledDown(true);
         setShowMenu(false);
-      } else if (newPos >= scrollPos) {
+      } else if (newPos > scrollPos) {
         setScaledDown(true);
         setShowMenu(false);
       } else {
         setHide(false);
-        if (newPos <= 100) setScaledDown(false);
+        if (newPos <= 75) setScaledDown(false);
       }
+      console.log(newPos, scrollPos);
       setScrollPos(newPos);
     };
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollPos]);
+
+  // console.log(scrollPos);
 
   if (hide) return null;
   return (
