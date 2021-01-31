@@ -46,3 +46,52 @@
     }
   }
 }
+
+.piece {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 100px;
+
+  .title {
+    text-align: center;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px 0;
+    margin: auto;
+    align-items: center;
+
+    p {
+      width: 50%;
+      margin-bottom: 25px;
+      @include breakpoint(600px) {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .sectionImg {
+      width: clamp(250px, 30vw, 400px);
+      height: clamp(250px, 30vw, 400px);
+      margin: 25px;
+
+      @include breakpoint(300px) {
+        width: 80%;
+        height: 80%;
+      }
+    }
+  }
+
+  .section:nth-child(odd) {
+    background-color: rgb(240, 240, 240);
+  }
+}

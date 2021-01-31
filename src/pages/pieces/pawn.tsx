@@ -9,22 +9,22 @@ import Layout from "../../layout/Layout";
 export default function pawn() {
   return (
     <Layout>
-      <div className="pawn">
-        <h2 className="subtitle">Pawn</h2>
+      <div className="piece">
+        <h1 className="title">Pawn</h1>
         <div className="section">
           <p>
             The pawn moves forward exactly one square, or optionally, two
             squares when on its starting square, toward the opponent's side of
             the board.
           </p>
-          <img src={pawn1} alt="" />
+          <img src={pawn1} alt="" className="sectionImg" />
         </div>
         <div className="section">
           <p>
             When there is an enemy piece one square diagonally ahead of a pawn,
             either left or right, then the pawn may capture that piece.
           </p>
-          <img src={pawn2} alt="" />
+          <img src={pawn2} alt="" className="sectionImg" />
         </div>
         <div className="section">
           <p>
@@ -34,15 +34,17 @@ export default function pawn() {
             starting square, and it could have been captured by an enemy pawn
             had it advanced only one square.
           </p>
-          <img src={pawn3} alt="" />
-          <img src={pawn4} alt="" />
+          <div className="images">
+            <img src={pawn3} alt="" className="sectionImg" />
+            <img src={pawn4} alt="" className="sectionImg" />
+          </div>
         </div>
         <div className="section">
           <p>
             If the pawn reaches a square on the back rank of the opponent, it
             promotes to the player's choice of a queen, rook, bishop, or knight.
           </p>
-          <img src={pawn5} alt="" />
+          <img src={pawn5} alt="" className="sectionImg" />
         </div>
       </div>
     </Layout>
