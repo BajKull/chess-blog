@@ -33,10 +33,14 @@ export default function PuzzleOfDay() {
             <p className="turn">White's move</p>
             {data.allDataJson.edges[0].node.puzzleOfDay.map(
               (moves: string[]) => (
-                <div className="move" onClick={(e) => showMove(e)}>
+                <div
+                  className="move"
+                  onClick={(e) => showMove(e)}
+                  key={moves.join("")}
+                >
                   <span className="hidden" />
-                  {moves.map((move: React.ReactNode) => (
-                    <p>{move}</p>
+                  {moves.map((move: string) => (
+                    <p key={move}>{move}</p>
                   ))}
                 </div>
               )

@@ -29,12 +29,12 @@ export default function index() {
             </h1>
             <div className="cards">
               <div className="card">
-                <h2>I'm a complete begginer</h2>
+                <h2 className="mediumTitle">I'm a complete begginer</h2>
                 <Pawn className="adventureImg" />
                 <button className="mainButton">See more</button>
               </div>
               <div className="card">
-                <h2>I already know the basics</h2>
+                <h2 className="mediumTitle">I already know the basics</h2>
                 <Queen className="adventureImg" />
                 <button className="mainButton">See more</button>
               </div>

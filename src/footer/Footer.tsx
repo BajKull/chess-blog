@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="col">
           <h2 className="footerTitle">Get in touch</h2>
           {data.allDataJson.edges[0].node.links.map((link) => (
-            <div className="row">
+            <div className="row" key={link.url}>
               <a href={link.url}>
                 <p>{link.name}</p>
               </a>
