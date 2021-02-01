@@ -5,10 +5,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     `gatsby-transformer-json`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    "gatsby-transformer-remark",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data`,
+        path: `${__dirname}/src/data`,
       },
     },
     {
@@ -19,6 +22,5 @@ module.exports = {
         },
       },
     },
-    "gatsby-transformer-remark",
   ],
 };

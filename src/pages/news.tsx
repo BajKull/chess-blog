@@ -13,12 +13,15 @@ export default function news() {
             fields {
               slug
             }
-            excerpt
+            excerpt(pruneLength: 250)
             frontmatter {
               date
               title
               author
               tags
+              featuredImage {
+                publicURL
+              }
             }
           }
         }
@@ -36,25 +39,35 @@ export default function news() {
     }
   `);
 
+  console.log(markdownPosts);
+
   return (
     <Layout>
       <div className="posts">
         <h1 className="title">News</h1>
         {markdownPosts.allMarkdownRemark.edges.map((post) => (
-          <Link
-            to={`/news/${post.node.fields.slug}`}
-            className="post"
-            key={post.node.fields.slug}
-          >
-            <h2 className="mediumTitle">{post.node.frontmatter.title}</h2>
-            <div className="flex">
-              <p className="newsAuthor">By {post.node.frontmatter.author}</p>
+          <div className="post" key={post.node.fields.slug}>
+            <div className="info">
+              <Link to={`/news/${post.node.fields.slug}`}>
+                <h2 className="mediumTitle">{post.node.frontmatter.title}</h2>
+              </Link>
+              <div className="flex">
+                <p className="newsAuthor">By {post.node.frontmatter.author}</p>
 
-              <Tags tags={post.node.frontmatter.tags} />
+                <Tags tags={post.node.frontmatter.tags} />
+              </div>
+              <p className="newsDesc">{post.node.excerpt}</p>
+              <p className="newsDate">{post.node.frontmatter.date}</p>
             </div>
-            <p className="newsDesc">{post.node.excerpt}</p>
-            <p className="newsDate">{post.node.frontmatter.date}</p>
-          </Link>
+            <div className="newsImg">
+              <Link to={`/news/${post.node.fields.slug}`}>
+                <img
+                  src={post.node.frontmatter.featuredImage.publicURL}
+                  alt=""
+                />
+              </Link>
+            </div>
+          </div>
         ))}
       </div>
     </Layout>

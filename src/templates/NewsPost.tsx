@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../layout/Layout";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Tags from "../components/Tags";
 
 export const post = graphql`
@@ -12,6 +12,9 @@ export const post = graphql`
         date
         tags
         title
+        featuredImage {
+          publicURL
+        }
       }
     }
     allDataJson {
@@ -32,16 +35,24 @@ export default function NewsPost({ data }) {
     <Layout>
       <div className="postContainer">
         <div className="post">
-          <h2 className="mediumTitle">
-            {data.markdownRemark.frontmatter.title}
-          </h2>
-          <div className="flex">
-            <p className="newsAuthor">
-              By {data.markdownRemark.frontmatter.author}
-            </p>
-            <Tags tags={data.markdownRemark.frontmatter.tags} />
+          <div className="info">
+            <h2 className="mediumTitle">
+              {data.markdownRemark.frontmatter.title}
+            </h2>
+            <div className="flex">
+              <p className="newsAuthor">
+                By {data.markdownRemark.frontmatter.author}
+              </p>
+              <Tags tags={data.markdownRemark.frontmatter.tags} />
+            </div>
+            <p className="newsDate">{data.markdownRemark.frontmatter.date}</p>
           </div>
-          <p className="newsDate">{data.markdownRemark.frontmatter.date}</p>
+          <div className="newsImg">
+            <img
+              src={data.markdownRemark.frontmatter.featuredImage.publicURL}
+              alt=""
+            />
+          </div>
         </div>
         <div
           className="postContent"

@@ -1,8 +1,9 @@
 ---
 title: "Tata Steel Chess 2021: Giri Maintains Sole Lead"
-author: "chess.com"
-date: "01/02/2021"
+author: chess.com
+date: 01/02/2021
 tags: ["Tata Steel"]
+featuredImage: ../../images/posts/post2.jpg
 ---
 
 # Tata Steel Chess 2021: Giri Maintains Sole Lead

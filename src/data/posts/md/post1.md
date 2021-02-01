@@ -1,8 +1,9 @@
 ---
 title: "Jorden van Foreest Wins Tata Steel Chess Tournament 2021"
-author: "chess.com"
-date: "01/02/2021"
+author: chess.com
+date: 01/02/2021
 tags: ["Tata Steel", "Chess 2021"]
+featuredImage: ../../images/posts/post1.jpg
 ---
 
 # Jorden van Foreest Wins Tata Steel Chess Tournament 2021
