@@ -17,8 +17,6 @@ export default function openings() {
     }
   `);
 
-  console.log(openings);
-
   return (
     <Layout>
       <div className="openings">

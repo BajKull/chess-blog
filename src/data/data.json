@@ -8,5 +8,9 @@
     }
   ],
   "mail": "bajkull@gmail.com",
-  "puzzleOfDay": [["qh7", "kf8"], ["qh8", "ke7"], ["re1"]]
+  "puzzleOfDay": [["qh7", "kf8"], ["qh8", "ke7"], ["re1"]],
+  "tags": [
+    { "name": "Tata Steel", "color": "#f67280" },
+    { "name": "Chess 2021", "color": " #c06c84" }
+  ]
 }

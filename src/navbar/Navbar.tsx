@@ -26,15 +26,12 @@ export default function Navbar() {
         setHide(false);
         if (newPos <= 75) setScaledDown(false);
       }
-      console.log(newPos, scrollPos);
       setScrollPos(newPos);
     };
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollPos]);
-
-  // console.log(scrollPos);
 
   if (hide) return null;
   return (
