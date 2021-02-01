@@ -1,12 +1,13 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
+import ContentfulNews from "../components/ContentfulNews";
 import Tags from "../components/Tags";
 import Layout from "../layout/Layout";
 import "../scss/news.scss";
 
 export default function news() {
-  const markdownPosts = useStaticQuery(graphql`
-    query mdQuery {
+  const posts = useStaticQuery(graphql`
+    query newsQuery {
       allMarkdownRemark {
         edges {
           node {
@@ -26,12 +27,19 @@ export default function news() {
           }
         }
       }
-      allDataJson {
+      allContentfulChessBlog {
         edges {
           node {
-            tags {
-              color
-              name
+            author
+            slug
+            tags
+            title
+            date
+            excerpt
+            featuredImage {
+              file {
+                url
+              }
             }
           }
         }
@@ -39,13 +47,11 @@ export default function news() {
     }
   `);
 
-  console.log(markdownPosts);
-
   return (
     <Layout>
       <div className="posts">
         <h1 className="title">News</h1>
-        {markdownPosts.allMarkdownRemark.edges.map((post) => (
+        {posts.allMarkdownRemark.edges.map((post) => (
           <div className="post" key={post.node.fields.slug}>
             <div className="info">
               <Link to={`/news/${post.node.fields.slug}`}>
@@ -69,6 +75,7 @@ export default function news() {
             </div>
           </div>
         ))}
+        <ContentfulNews data={posts.allContentfulChessBlog} />
       </div>
     </Layout>
   );

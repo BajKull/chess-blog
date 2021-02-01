@@ -13,7 +13,8 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const template = path.resolve("./src/templates/NewsPost.tsx");
+  const markdownTemplate = path.resolve("./src/templates/MarkdownPost.tsx");
+  const contentfulTemplate = path.resolve("./src/templates/ContentfulPost.tsx");
 
   const res = await graphql(`
     query slugQuery {
@@ -26,15 +27,36 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulChessBlog {
+        edges {
+          node {
+            author
+            slug
+            tags
+            title
+            date
+          }
+        }
+      }
     }
   `);
 
   res.data.allMarkdownRemark.edges.forEach((edge) => {
     createPage({
-      component: template,
+      component: markdownTemplate,
       path: `/news/${edge.node.fields.slug}`,
       context: {
         slug: edge.node.fields.slug,
+      },
+    });
+  });
+
+  res.data.allContentfulChessBlog.edges.forEach((edge) => {
+    createPage({
+      component: contentfulTemplate,
+      path: `/news/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
       },
     });
   });

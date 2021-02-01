@@ -7,6 +7,7 @@ export const post = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt(pruneLength: 250)
       frontmatter {
         author
         date
@@ -14,16 +15,6 @@ export const post = graphql`
         title
         featuredImage {
           publicURL
-        }
-      }
-    }
-    allDataJson {
-      edges {
-        node {
-          tags {
-            color
-            name
-          }
         }
       }
     }
@@ -45,6 +36,7 @@ export default function NewsPost({ data }) {
               </p>
               <Tags tags={data.markdownRemark.frontmatter.tags} />
             </div>
+            <p className="newsDesc">{data.markdownRemark.excerpt}</p>
             <p className="newsDate">{data.markdownRemark.frontmatter.date}</p>
           </div>
           <div className="newsImg">

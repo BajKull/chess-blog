@@ -17,6 +17,14 @@ export default function Tags({ tags }) {
     }
   `);
 
+  const getColor = (tag: string) => {
+    const color = tagsQuery.allDataJson.edges[0].node.tags.find(
+      (t: { name: string }) => t.name === tag
+    );
+    if (color) return color.color;
+    return "#507d60";
+  };
+
   return (
     <div className="newsTags">
       {tags.map((tag: string) => (
@@ -24,11 +32,7 @@ export default function Tags({ tags }) {
           className="newsTag"
           key={tag}
           style={{
-            backgroundColor: `${
-              tagsQuery.allDataJson.edges[0].node.tags.find(
-                (t: { name: string }) => t.name === tag
-              ).color
-            }`,
+            backgroundColor: `${getColor(tag)}`,
           }}
         >
           {tag}
