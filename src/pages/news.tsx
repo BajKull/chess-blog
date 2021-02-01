@@ -1,5 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
+import Tags from "../components/Tags";
 import Layout from "../layout/Layout";
 import "../scss/news.scss";
 
@@ -35,12 +36,6 @@ export default function news() {
     }
   `);
 
-  console.log(
-    markdownPosts.allDataJson.edges[0].node.tags.find(
-      (t) => t.name === "Tata Steel"
-    ).color
-  );
-
   return (
     <Layout>
       <div className="posts">
@@ -54,23 +49,8 @@ export default function news() {
             <h2 className="mediumTitle">{post.node.frontmatter.title}</h2>
             <div className="flex">
               <p className="newsAuthor">By {post.node.frontmatter.author}</p>
-              <div className="newsTags">
-                {post.node.frontmatter.tags.map((tag: string) => (
-                  <p
-                    className="newsTag"
-                    key={post.node.frontmatter.title + tag}
-                    style={{
-                      backgroundColor: `${
-                        markdownPosts.allDataJson.edges[0].node.tags.find(
-                          (t) => t.name === tag
-                        ).color
-                      }`,
-                    }}
-                  >
-                    {tag}
-                  </p>
-                ))}
-              </div>
+
+              <Tags tags={post.node.frontmatter.tags} />
             </div>
             <p className="newsDesc">{post.node.excerpt}</p>
             <p className="newsDate">{post.node.frontmatter.date}</p>
