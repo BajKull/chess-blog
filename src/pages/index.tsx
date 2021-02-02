@@ -5,6 +5,8 @@ import Pawn from "../data/svg/pawn.svg";
 import Queen from "../data/svg/queen.svg";
 import PuzzleOfDay from "../components/PuzzleOfDay";
 import "../scss/landing.scss";
+import { Link } from "gatsby";
+import scrollTo from "gatsby-plugin-smoothscroll";
 
 export default function index() {
   return (
@@ -19,13 +21,18 @@ export default function index() {
               <h2 className="landingSubtitle subtitle">
                 When you see a good move, look for a better one.
               </h2>
-              <button className="mainButton">Read more</button>
+              <button
+                className="mainButton"
+                onClick={() => scrollTo("#adventure")}
+              >
+                Read more
+              </button>
             </header>
             <div className="illustrationContainer">
               <img src={chessboard} alt="" className="mainIllustration" />
             </div>
           </div>
-          <div className="adventure">
+          <div className="adventure" id="adventure">
             <h1 className="adventureTitle title">
               Start you chess adventure now!
             </h1>
@@ -33,12 +40,16 @@ export default function index() {
               <div className="card">
                 <h2 className="mediumTitle">I'm a complete begginer</h2>
                 <Pawn className="adventureImg" />
-                <button className="mainButton">See more</button>
+                <Link to="/pieces">
+                  <button className="mainButton">See more</button>
+                </Link>
               </div>
               <div className="card">
                 <h2 className="mediumTitle">I already know the basics</h2>
                 <Queen className="adventureImg" />
-                <button className="mainButton">See more</button>
+                <Link to="/learn">
+                  <button className="mainButton">See more</button>
+                </Link>
               </div>
             </div>
           </div>
