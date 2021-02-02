@@ -1,11 +1,33 @@
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 import Tags from "./Tags";
 
-export default function ContentfulNews({ data }) {
+export default function ContentfulNews() {
+  const posts = useStaticQuery(graphql`
+    query contentfulNewsQuery {
+      allContentfulChessBlog {
+        edges {
+          node {
+            author
+            slug
+            tags
+            title
+            date
+            excerpt
+            featuredImage {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <>
-      {data.edges.map((edge) => (
+      {posts.allContentfulChessBlog.edges.map((edge) => (
         <div className="post" key={edge.node.slug}>
           <div className="info">
             <Link to={`/news/${edge.node.slug}`}>
