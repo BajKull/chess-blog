@@ -33,5 +33,27 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: "gatsby-source-firestore",
+      options: {
+        credential: require("./.env.privateKey.json"),
+        types: [
+          {
+            type: "firebasePosts",
+            collection: "posts",
+            map: (doc) => ({
+              title: doc.title,
+              author: doc.author,
+              slug: doc.slug,
+              date: doc.date,
+              featuredImage: doc.featuredImage,
+              tags: doc.tags,
+              html: doc.html,
+              excerpt: doc.excerpt,
+            }),
+          },
+        ],
+      },
+    },
   ],
 };

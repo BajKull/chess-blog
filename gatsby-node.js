@@ -15,6 +15,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const markdownTemplate = path.resolve("./src/templates/MarkdownPost.tsx");
   const contentfulTemplate = path.resolve("./src/templates/ContentfulPost.tsx");
+  const firebaseTemplate = path.resolve("./src/templates/FirebasePost.tsx");
 
   const res = await graphql(`
     query slugQuery {
@@ -30,11 +31,14 @@ module.exports.createPages = async ({ graphql, actions }) => {
       allContentfulChessBlog {
         edges {
           node {
-            author
             slug
-            tags
-            title
-            date
+          }
+        }
+      }
+      allFirebasePosts {
+        edges {
+          node {
+            slug
           }
         }
       }
@@ -54,6 +58,16 @@ module.exports.createPages = async ({ graphql, actions }) => {
   res.data.allContentfulChessBlog.edges.forEach((edge) => {
     createPage({
       component: contentfulTemplate,
+      path: `/news/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+    });
+  });
+
+  res.data.allFirebasePosts.edges.forEach((edge) => {
+    createPage({
+      component: firebaseTemplate,
       path: `/news/${edge.node.slug}`,
       context: {
         slug: edge.node.slug,

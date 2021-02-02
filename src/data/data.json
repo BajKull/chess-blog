@@ -13,6 +13,7 @@
     { "name": "Tata Steel", "color": "#f67280" },
     { "name": "Chess 2021", "color": " #c06c84" },
     { "name": "Dubai", "color": " #355c7d" },
-    { "name": "FIDE", "color": " #6c5b7b" }
+    { "name": "FIDE", "color": " #6c5b7b" },
+    { "name": "Hall of Fame", "color": "#8f6e21" }
   ]
 }
