@@ -1,4 +1,5 @@
 @import "colors";
+@import "mixins";
 
 .footer {
   // height: 200px;
@@ -19,11 +20,31 @@
     width: 80%;
     margin: auto;
     color: white;
-    padding: 50px 0;
+    padding: 75px 0;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: center;
+
+    @include breakpoint(1050px) {
+      width: 90%;
+    }
 
     .col {
-      .footerTitle {
-        margin-bottom: 15px;
+      max-width: 25%;
+      min-width: 150px;
+      margin: 25px 50px;
+
+      @include breakpoint(1050px) {
+        margin: 25px;
+      }
+      @include breakpoint(600px) {
+        min-width: 125px;
+        margin: 15px;
+      }
+
+      .mediumTitle {
+        margin-bottom: 25px;
+        font-weight: 600;
       }
 
       .row {
@@ -35,12 +56,17 @@
         // display: contents;
         text-decoration: none;
         color: white;
-        margin: 5px 0;
+        margin-bottom: 10px;
         transition: 0.2s;
 
         &:hover {
           color: lighten($darkPurple, 40);
         }
+      }
+
+      .footerDesc {
+        color: rgb(230, 230, 230);
+        font-size: 0.85em;
       }
 
       .mail {
@@ -51,7 +77,11 @@
 
     .copyright {
       text-align: end;
+      margin-left: auto;
+      margin-top: 25px;
+      font-size: 0.75em;
       color: lighten($darkPurple, 25);
+      width: 100%;
     }
   }
 }

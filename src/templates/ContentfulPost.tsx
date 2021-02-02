@@ -26,9 +26,6 @@ export const post = graphql`
 `;
 
 export default function ContentfulPost({ data }) {
-  console.log(data);
-  // console.log(documentToHtmlString(data.contentfulChessBlog.html));
-  console.log(JSON.parse(data.contentfulChessBlog.html.raw));
   return (
     <Layout>
       <div className="postContainer">
