@@ -1,48 +1,37 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Chess-blog
 
-## 🚀 Quick start
+Chess-blog is a static blog site where you can add posts via **.md** files, **Contentful** or **Firebase**.
 
-1.  **Create a Gatsby site.**
+See the site live [here](https://chess-blog.netlify.app/)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Configuration
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+In order to run the project, besides installing packages listed in **package.json**, you will need:
 
-2.  **Start developing.**
+- **.env.development** file, which stores two environment variables:
+  - CONTENTFUL_SPACE_ID
+  - CONTENTFUL_ACCESS_TOKEN
+- **.env.privateKey.json** file, which stores _firebase_ private key which you can download [here](https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk)
+  These files need to be located in the root folder _(next to **src** folder)_
 
-    Navigate into your new site’s directory and start it up.
+In order to access data from firebase, you will need to modify **gatsby-source-firestore** plugin inside **gatsby-config.js** file.
+You can see the documentation for that [here](https://www.gatsbyjs.com/plugins/gatsby-source-firestore/)
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## Technology stack
 
-3.  **Open the code and start customizing!**
+- React
+- Gatsby
+- Graphql
+- Firebase
+- Contentful
 
-    Your site is now running at http://localhost:8000!
+## About
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+I created this site in order to learn **Gatsby** and **Graphql**. I also used typescript instead of javascript.
+There are also many ways to expand current state of this site. For example:
 
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- adding filtering news by tags, date etc.
+- adding programmed chessboard in order to play chess on the site.
+- adding chess puzzles
+- adding comments section to posts
+  and many more. I didn't implement these features because I already did something similar in other projects like [BnnCardMaker](https://github.com/BajKull/cardmaker)
