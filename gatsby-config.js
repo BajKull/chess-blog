@@ -57,5 +57,17 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Chess-blog`,
+        short_name: `Chess-blog`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#f67280`,
+        display: `standalone`,
+        icon: `src/data/images/logo.png`,
+      },
+    },
   ],
 };

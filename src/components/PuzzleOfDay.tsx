@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import puzzle from "../data/images/puzzle.png";
+import puzzle from "../data/images/puzzle.jpg";
 import "../scss/puzzle.scss";
 
 export default function PuzzleOfDay() {

@@ -42,18 +42,18 @@ export default function Navbar() {
         </Link>
         <Burger className="burger" onClick={() => setShowMenu(!showMenu)} />
         <ul className={showMenu ? "shown" : "hidden"}>
-          <Link to="/pieces">
-            <li>Pieces</li>
-          </Link>
-          <Link to="/openings">
-            <li>Openings</li>
-          </Link>
-          <Link to="/news">
-            <li>News</li>
-          </Link>
-          <Link to="/learn">
-            <li>Learn</li>
-          </Link>
+          <li>
+            <Link to="/pieces">Pieces</Link>
+          </li>
+          <li>
+            <Link to="/openings">Openings</Link>
+          </li>
+          <li>
+            <Link to="/news">News</Link>
+          </li>
+          <li>
+            <Link to="/learn">Learn</Link>
+          </li>
         </ul>
       </div>
     </div>
