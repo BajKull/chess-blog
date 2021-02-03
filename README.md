@@ -12,6 +12,7 @@ In order to run the project, besides installing packages listed in **package.jso
   - CONTENTFUL_SPACE_ID
   - CONTENTFUL_ACCESS_TOKEN
 - **.env.privateKey.json** file, which stores _firebase_ private key which you can download [here](https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk)
+
   These files need to be located in the root folder _(next to **src** folder)_
 
 In order to access data from firebase, you will need to modify **gatsby-source-firestore** plugin inside **gatsby-config.js** file.
@@ -34,4 +35,5 @@ There are also many ways to expand current state of this site. For example:
 - adding programmed chessboard in order to play chess on the site.
 - adding chess puzzles
 - adding comments section to posts
-  and many more. I didn't implement these features because I already did something similar in other projects like [BnnCardMaker](https://github.com/BajKull/cardmaker)
+
+  And many more. Site structure will easily allow you to do that. I didn't implement these features because I already did something similar in other projects like [BnnCardMaker](https://github.com/BajKull/cardmaker)
