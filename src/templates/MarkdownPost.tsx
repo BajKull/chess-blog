@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../layout/Layout";
 import { graphql, Link } from "gatsby";
 import Tags from "../components/Tags";
+import Head from "../head/Head";
 
 export const post = graphql`
   query($slug: String!) {
@@ -24,6 +25,10 @@ export const post = graphql`
 export default function NewsPost({ data }) {
   return (
     <Layout>
+      <Head
+        title={data.markdownRemark.frontmatter.title}
+        description={data.markdownRemark.html}
+      />
       <div className="postContainer">
         <div className="post">
           <div className="info">

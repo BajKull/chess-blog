@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Tags from "../components/Tags";
+import Head from "../head/Head";
 import Layout from "../layout/Layout";
 
 export const post = graphql`
@@ -21,6 +22,10 @@ export const post = graphql`
 export default function FirebasePost({ data }) {
   return (
     <Layout>
+      <Head
+        title={data.firebasePosts.title}
+        description={data.firebasePosts.html.join(" ")}
+      />
       <div className="postContainer">
         <div className="post">
           <div className="info">

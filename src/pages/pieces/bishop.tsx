@@ -1,11 +1,18 @@
 import React from "react";
 import bishop1 from "../../data/images/bishop1.jpg";
 import bishop2 from "../../data/images/bishop2.jpg";
+import Head from "../../head/Head";
 import Layout from "../../layout/Layout";
 
 export default function bishop() {
   return (
     <Layout>
+      <Head
+        title="Bishop"
+        description="The bishop moves any number of vacant squares diagonally in a
+            straight line. Consequently, a bishop stays on squares of the same
+            color throughout a game."
+      />
       <div className="piece">
         <h1 className="title">Bishop</h1>
         <div className="section">

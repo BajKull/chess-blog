@@ -3,11 +3,17 @@ import king1 from "../../data/images/king1.jpg";
 import king2 from "../../data/images/king2.jpg";
 import king3 from "../../data/images/king3.jpg";
 import king4 from "../../data/images/king4.jpg";
+import Head from "../../head/Head";
 import Layout from "../../layout/Layout";
 
 export default function king() {
   return (
     <Layout>
+      <Head
+        title="King"
+        description="The king moves exactly one vacant square in any direction: forwards,
+        backwards, left, right, or diagonally."
+      />
       <div className="piece">
         <h1 className="title">King</h1>
         <div className="section">

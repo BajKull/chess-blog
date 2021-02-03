@@ -4,11 +4,18 @@ import pawn2 from "../../data/images/pawn2.jpg";
 import pawn3 from "../../data/images/pawn3.jpg";
 import pawn4 from "../../data/images/pawn4.jpg";
 import pawn5 from "../../data/images/pawn5.jpg";
+import Head from "../../head/Head";
 import Layout from "../../layout/Layout";
 
 export default function pawn() {
   return (
     <Layout>
+      <Head
+        title="Pawn"
+        description="The pawn moves forward exactly one square, or optionally, two
+        squares when on its starting square, toward the opponent's side of
+        the board."
+      />
       <div className="piece">
         <h1 className="title">Pawn</h1>
         <div className="section">

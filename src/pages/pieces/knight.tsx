@@ -1,11 +1,18 @@
 import React from "react";
 import knight1 from "../../data/images/knight1.jpg";
 import knight2 from "../../data/images/knight2.jpg";
+import Head from "../../head/Head";
 import Layout from "../../layout/Layout";
 
 export default function knight() {
   return (
     <Layout>
+      <Head
+        title="Knight"
+        description="The knight moves on an extended diagonal from one corner of any 2×3
+        rectangle of squares to the furthest opposite corner. Consequently,
+        the knight alternates its square color each time it moves."
+      />
       <div className="piece">
         <h1 className="title">Knight</h1>
         <div className="section">

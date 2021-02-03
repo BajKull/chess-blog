@@ -7,10 +7,15 @@ import PuzzleOfDay from "../components/PuzzleOfDay";
 import "../scss/landing.scss";
 import { Link } from "gatsby";
 import scrollTo from "gatsby-plugin-smoothscroll";
+import Head from "../head/Head";
 
 export default function index() {
   return (
     <Layout>
+      <Head
+        title="Home"
+        description="Chess blog that helps beginners to start their chess adventure."
+      />
       <div className="landing">
         <div className="content">
           <div className="mainLanding">

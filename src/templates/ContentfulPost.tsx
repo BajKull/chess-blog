@@ -3,6 +3,7 @@ import React from "react";
 import Tags from "../components/Tags";
 import Layout from "../layout/Layout";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Head from "../head/Head";
 
 export const post = graphql`
   query($slug: String!) {
@@ -25,9 +26,29 @@ export const post = graphql`
   }
 `;
 
+const convertToPlain = (rtf: string) => {
+  rtf = rtf.replace(/\\par[d]?/g, "");
+  rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
+  rtf = rtf.replace(/\[\]/g, "");
+  rtf = rtf.replace(/\[*"data":,*/g, "");
+  rtf = rtf.replace(/\[*"content":,*/g, "");
+  rtf = rtf.replace(/\[*"marks":,*/g, "");
+  rtf = rtf.replace(/\[*"value":,*/g, "");
+  rtf = rtf.replace(/"nodeType":"paragraph"\]*/g, "");
+  rtf = rtf.replace(/"nodeType":"document"\]*/g, "");
+  rtf = rtf.replace(/"nodeType":"text"\]*/g, "");
+  rtf = rtf.replace(/"*,,,"*/g, "");
+  rtf = rtf.replace(/\\"/g, "");
+  return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
+};
+
 export default function ContentfulPost({ data }) {
   return (
     <Layout>
+      <Head
+        title={data.contentfulChessBlog.title}
+        description={convertToPlain(data.contentfulChessBlog.html.raw)}
+      />
       <div className="postContainer">
         <div className="post">
           <div className="info">

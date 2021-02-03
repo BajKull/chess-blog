@@ -3,10 +3,15 @@ import Layout from "../layout/Layout";
 import { piecesInfo } from "../components/piecesInfo";
 import { Link } from "gatsby";
 import "../scss/pieces.scss";
+import Head from "../head/Head";
 
 export default function pieces() {
   return (
     <Layout>
+      <Head
+        title="Pieces"
+        description="Learn how each piece in chess moves and what is capable of."
+      />
       <div className="pieces">
         <h1 className="title">Chess pieces</h1>
         <div className="content">

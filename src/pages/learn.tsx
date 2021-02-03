@@ -5,10 +5,15 @@ import Human from "../data/svg/human.svg";
 import Ai from "../data/svg/ai.svg";
 import Puzzle from "../data/svg/puzzle.svg";
 import "../scss/learn.scss";
+import Head from "../head/Head";
 
 export default function learn() {
   return (
     <Layout>
+      <Head
+        title="Learn"
+        description="Learn how to improve your chess skills. Solve puzzles. Play against computer. Play against humans. Analyse games."
+      />
       <div className="learn">
         <h1 className="title">Learn</h1>
         <div className="content">
